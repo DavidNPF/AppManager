@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.personal.npf.appmanager.MainActivity">
+<android.support.v7.widget.Toolbar
+    android:id="@+id/tool"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:theme="@style/AppTheme.ToolBar"
+    app:title="手机助手">
 
-    <TextView
-        android:layout_width="wrap_content"
+</android.support.v7.widget.Toolbar>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/dl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:tabMode="fixed"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
+<android.support.design.widget.NavigationView
+    android:id="@+id/nav"
+    android:layout_width="200dp"
+    android:layout_height="match_parent"
+    app:menu="@menu/menu_left"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/navigation_head">
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
+</LinearLayout>
